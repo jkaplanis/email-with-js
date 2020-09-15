@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="email.js"></script>
+    <title>Email with JS</title>
+  </head>
+  <body>
+    <form method="post">
+      <input type="button" value="Send Email" onclick="sendEmail()" />
+    </form>
+    <button onclick="clearInterval(emailInterval)">Stop Sending</button>
+  </body>
+</html>
