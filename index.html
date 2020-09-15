@@ -16,6 +16,51 @@
     <title>Email with JS</title>
   </head>
   <body>
+    <div class="input-group mb-3">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="To:"
+        aria-label="recipientEmail"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="input-group mb-3">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="From: (Your Email)"
+        aria-label="senderEmail"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="input-group mb-3">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        aria-label="senderPassword"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Subject"
+        aria-label="emailSubject"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Email Body</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>
+
     <form method="post">
       <input type="button" value="Send Email" onclick="sendEmail()" />
     </form>
