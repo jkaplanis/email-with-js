@@ -1,11 +1,15 @@
+var emailInterval;
+
 function getValues() {
   var recipientEmail = document.getElementById("recipientEmail").value;
   var senderEmail = document.getElementById("senderEmail").value;
   var senderPassword = document.getElementById("senderPassword").value;
   var emailSubject = document.getElementById("emailSubject").value;
   var emailBody = document.getElementById("emailBody").value;
-  var numberOfEmails = document.getElementById("numberOfEmails").value;
-  var emailInterval = document.getElementById("emailInterval").value * 60000;
+  var numberOfEmails = parseInt(
+    document.getElementById("numberOfEmails").value
+  );
+  var interval = parseInt(document.getElementById("interval").value) * 60000;
 
   sendEmail(
     recipientEmail,
@@ -14,7 +18,7 @@ function getValues() {
     emailSubject,
     emailBody,
     numberOfEmails,
-    emailInterval
+    interval
   );
 }
 
@@ -25,10 +29,10 @@ function sendEmail(
   emailSubject,
   emailBody,
   numberOfEmails,
-  emailInterval
+  interval
 ) {
   var emailsSent = 0;
-  var emailInterval = setInterval(function () {
+  emailInterval = setInterval(function () {
     Email.send({
       Host: "smtp.gmail.com",
       Username: `${senderEmail}`,
@@ -37,12 +41,11 @@ function sendEmail(
       From: `${senderEmail}`,
       Subject: `${emailSubject}`,
       Body: `${emailBody}`
-    }).then(message => {
+    }).then(() => {
       emailsSent += 1;
-      // clearInterval after the function has been called 3 times.
       if (emailsSent === numberOfEmails) {
         clearInterval(emailInterval);
       }
     });
-  }, 15000);
+  }, interval);
 }
