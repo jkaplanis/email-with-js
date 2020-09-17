@@ -18,7 +18,3 @@ function sendEmail() {
     });
   }, 15000);
 }
-
-// Host: "smtp.gmail.com"
-// Username: "johntkaplanis@gmail.com"
-// Password: "password"
