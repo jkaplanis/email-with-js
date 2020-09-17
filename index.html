@@ -24,6 +24,7 @@
           placeholder="To:"
           aria-label="recipientEmail"
           aria-describedby="basic-addon1"
+          id="recipientEmail"
         />
       </div>
       <div class="input-group mb-3">
@@ -33,6 +34,7 @@
           placeholder="From: (Your Email)"
           aria-label="senderEmail"
           aria-describedby="basic-addon1"
+          id="senderEmail"
         />
       </div>
       <div class="input-group mb-3">
@@ -42,6 +44,7 @@
           placeholder="Password"
           aria-label="senderPassword"
           aria-describedby="basic-addon1"
+          id="senderPassword"
         />
       </div>
       <div class="input-group mb-3">
@@ -51,14 +54,15 @@
           placeholder="Subject"
           aria-label="emailSubject"
           aria-describedby="basic-addon1"
+          id="emailSubject"
         />
       </div>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Email Body</label>
         <textarea
+          placeholder="Email Body"
           class="form-control"
-          id="exampleFormControlTextarea1"
           rows="3"
+          id="emailBody"
         ></textarea>
       </div>
       <div class="input-group mb-3">
@@ -68,8 +72,9 @@
           placeholder="Number of emails to send (max 100)"
           min="1"
           max="100"
-          aria-label="emailSubject"
+          aria-label="numberOfEmails"
           aria-describedby="basic-addon1"
+          id="numberOfEmails"
         />
       </div>
       <div class="input-group mb-3">
@@ -78,12 +83,12 @@
           class="form-control"
           placeholder="Interval (in minutes)"
           min="1"
-          max="60"
-          aria-label="emailSubject"
+          aria-label="interval"
           aria-describedby="basic-addon1"
+          id="emailInterval"
         />
       </div>
-      <input type="button" value="Send Email" onclick="sendEmail()" />
+      <input type="button" value="Send Email" onclick="getValues()" />
     </form>
     <button onclick="clearInterval(emailInterval)">Stop Sending</button>
     <!-- JS, Popper.js, and jQuery -->
