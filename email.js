@@ -1,5 +1,22 @@
 var emailInterval;
 
+function giphyCall() {
+  // giphy api call
+  var queryURL =
+    "http://api.giphy.com/v1/gifs/random?tag=middle+finger&rating=r&api_key=Tqf8MqeViTyiKtCCXA2KUC1sci29Di6p&limit=1";
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(response => {
+    console.log(response);
+    var gifUrl = response.data.image_original_url;
+    var gif = $("<img>");
+    gif.attr("src", gifUrl);
+    gif.attr("alt", "middle finger gif");
+    $("#gif").prepend(gif);
+  });
+}
+
 function getValues() {
   var recipientEmail = document.getElementById("recipientEmail").value;
   var senderEmail = document.getElementById("senderEmail").value;
@@ -46,6 +63,8 @@ function sendEmail(
       if (emailsSent === numberOfEmails) {
         clearInterval(emailInterval);
       }
+
+      giphyCall();
     });
   }, interval);
 }
